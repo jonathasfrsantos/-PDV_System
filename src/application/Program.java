@@ -125,14 +125,14 @@ public class Program {
 				System.out.printf("CREDIT CARD ............... R$ %.2f", totalValue);
 			} else if (numberInstallments > 1) {
 				Double installmentAmount = totalValue / numberInstallments;
-				System.out.printf("CREDIT CARD ............... IN %d X INSTALLMENTS OF %.2f ", numberInstallments,
+				System.out.printf("CREDIT CARD ............... IN %d X INSTALLMENTS OF %.2f %n", numberInstallments,
 						installmentAmount);
 			}
 		} else if (chosenPaymentMethod == 2) {
 			System.out.printf("DEBIT CARD ............... R$ %.2f %n", totalValue);
 
 		}
-		System.out.println("____________________________________________________");
+		System.out.println(" ____________________________________________________");
 		System.out.printf("PURCHASED TOTAL ............... R$ %.2f %n", totalValue);
 
 		sc.close();

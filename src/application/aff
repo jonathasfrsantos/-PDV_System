@@ -23,3 +23,12 @@ A classe SaleItem tem associação para a classe Product (um SaleItem tem um Produ
 
 
 
+********************************************************************************************************************************
+
+// List<SaleItem> listPurcahsed = new ArrayList<>(); // não é preciso instanciar a lista de "itens comprados"
+		List<Product> listProductsStock = new ArrayList<>(); // no exemplo do Nélio, os produtos são comunicados na
+																// entrada do usuário, já meu caso, foi necessário
+																// coloca-los em uma lista de "produtos no estoque para serem acessados a frente"
+		
+
+
