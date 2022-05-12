@@ -20,7 +20,7 @@ public class Main {
 
 		List<Product> listProductStock = BancoDeDadosFake.buscarProdutos();
 		List<Product> purchasedProducts = new ArrayList<>();
-		
+
 		double totalValue = 0.0;
 		int count = 0;
 		int enteredCode = 0;
@@ -29,32 +29,29 @@ public class Main {
 		int numberInstallments = 0;
 		int amountPurchased = 0;
 
-		
-
 		Sale s1 = new Sale();
 		do {
 			System.out.println("Enter product code: [PRESS 999 to finish registration] ");
 			enteredCode = sc.nextInt();
-			LocalDateTime ldt = LocalDateTime.now(); // depois do primeiro produto registrado, tem ínicio a venda por isso instancio a data e hora
+			LocalDateTime ldt = LocalDateTime.now(); // depois do primeiro produto registrado, tem ínicio a venda por
+														// isso instancio a data e hora
 
 			s1.setId(1);
-			for (Product item : listProductStock) {  // Para cada produto da lista de Produtos em estoque
-				if (enteredCode == item.getCode()) {
-					s1.setDate(ldt);
-					totalValue += item.getPrice();
-					s1.setTotal(totalValue);
-					count += 1;
-					s1.setQuantityProducts(count);
-					SaleItem saleItem = new SaleItem(1, item.getPrice(), item); // aqui mudou em relação ao primeiro projeto, agora eu instancio o SaleItem passando o produto do loop como um dos parâmetros
-					s1.addProducts(saleItem); // Depois adiciono o saleItem na lista de Sale(que é uma lista do tipo SaleItem)
-					System.out.println(item.getName());
-					System.out.println("Subtotal R$" + String.format("%.2f", s1.getTotal()));
-				
-				}
+			Product item = BancoDeDadosFake.buscarProdutoPorId(enteredCode, listProductStock);
+			s1.setDate(ldt);
+			totalValue += item.getPrice();
+			s1.setTotal(totalValue);
+			count += 1;
+			s1.setQuantityProducts(count);
+			SaleItem saleItem = new SaleItem(1, item.getPrice(), item); // aqui mudou em relação ao primeiro projeto,
+																		// agora eu instancio o SaleItem passando o
+																		// produto do loop como um dos parâmetros
+			s1.addProducts(saleItem); // Depois adiciono o saleItem na lista de Sale(que é uma lista do tipo SaleItem)
+			System.out.println(item.getName());
+			System.out.println("Subtotal R$" + String.format("%.2f", s1.getTotal()));
 
-			}
 		} while (enteredCode != 999);
-		
+
 		System.out.println("_____________________________________ \n");
 		System.out.printf("Subtotal %.2f %n", totalValue);
 		System.out.println("_____________________________________");
@@ -73,7 +70,7 @@ public class Main {
 			} else if (chosenPaymentMethod == 3) {
 				System.out.println("How many installments? ");
 				numberInstallments = sc.nextInt();
-			} 
+			}
 
 		} while (chosenPaymentMethod < 1 || chosenPaymentMethod > 3);
 
