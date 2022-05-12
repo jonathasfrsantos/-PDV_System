@@ -1,0 +1,25 @@
+****************************Anotações do projeto****************************
+
+
+Nesse projeto POO, a intenção é simular um caixa (PDV/ checkout de itens)
+
+Criei três classes / entidades do negócio: Sale(venda), Product e a classe associativa SaleItem. 
+
+Criei a SaleItem observando a aula 139 no Nélio Alves e por concluir que a modalagem adequada de Sale com Product é:
+
+1 Sale(venda) tem 1 ou mais products  E um product está associado a uma ou mais vendas. 
+
+Sendo assim, a cardinalidade é de muitos para muitos.
+
+***********************************************************************
+
+A classe Sale tem uma lista de ItemSale chamada "ShoppingCart" (carrinho de compras)
+
+Note que a classe Sale tem dois métodos (adicionar e excluir de uma lista) que recebem um parâmetro item do tipo SaleItem
+
+************************************************************************
+
+A classe SaleItem tem associação para a classe Product (um SaleItem tem um Product), e a classe Sale tem uma lista de SaleItem
+
+
+
