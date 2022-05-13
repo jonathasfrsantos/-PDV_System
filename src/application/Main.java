@@ -59,6 +59,7 @@ public class Main {
 		System.out.println("_____________________________________");
 
 		Monitor.escolherMetodoPagamento(totalValue, purchasedProducts);
+		
 		sc.close();
 	}
 }
