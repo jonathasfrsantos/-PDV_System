@@ -58,7 +58,7 @@ public class Main {
 		System.out.printf("Subtotal %.2f %n", totalValue);
 		System.out.println("_____________________________________");
 
-		Monitor.escolherMetodoPagamento(totalValue, purchasedProducts);
+		Monitor.escolherMetodoPagamento(totalValue, s1);
 		
 		sc.close();
 	}

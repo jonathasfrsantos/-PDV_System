@@ -1,12 +1,10 @@
 package entities;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Monitor {
 
-	public static void escolherMetodoPagamento(double totalValue, List<Product> purchasedProducts) {
+	public static void escolherMetodoPagamento(double totalValue,  Sale sale) {
 
 		System.out.println("SELECT PAYMENT METHOD : \n  1 - IN CASH \n  2 - DEBIT CARD \n 3 - CREDIT CARD \n");
 		Scanner sc = new Scanner(System.in);
@@ -37,9 +35,9 @@ public class Monitor {
 		System.out.println("\n INVOICE  ");
 		System.out.println("_____________________________________");
 		System.out.println("ITEM ----- CODE ---- DESCRIPTION ---- PRICE R$");
-		for (Product itens : purchasedProducts) {
+		for (SaleItem itens : sale.getList()) {
 			count += 1;
-			System.out.println(count + "----" + itens.getCode() + "----" + itens.getName() + "----" + itens.getPrice());
+			System.out.println(count + "----" + itens.getProduct().getCode() + "----" + itens.getProduct().getName() + "----" + itens.getProduct().getPrice());
 		}
 
 		// fifth stage - total of bought
