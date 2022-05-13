@@ -30,12 +30,14 @@ public class Main {
 		int amountPurchased = 0;
 
 		Sale s1 = new Sale();
+		
 		do {
 			System.out.println("Enter product code: [PRESS 999 to finish registration] ");
 			enteredCode = sc.nextInt();
-			LocalDateTime ldt = LocalDateTime.now(); // depois do primeiro produto registrado, tem ínicio a venda por
-														// isso instancio a data e hora
-
+			if(enteredCode == 999) {
+				break;
+			}
+			LocalDateTime ldt = LocalDateTime.now(); 
 			s1.setId(1);
 			Product item = BancoDeDadosFake.buscarProdutoPorId(enteredCode, listProductStock);
 			s1.setDate(ldt);
@@ -49,8 +51,9 @@ public class Main {
 			s1.addProducts(saleItem); // Depois adiciono o saleItem na lista de Sale(que é uma lista do tipo SaleItem)
 			System.out.println(item.getName());
 			System.out.println("Subtotal R$" + String.format("%.2f", s1.getTotal()));
-
+			System.out.println("enteredCode => " + enteredCode);
 		} while (enteredCode != 999);
+	
 
 		System.out.println("_____________________________________ \n");
 		System.out.printf("Subtotal %.2f %n", totalValue);
