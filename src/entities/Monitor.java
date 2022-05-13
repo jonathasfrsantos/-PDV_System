@@ -6,13 +6,15 @@ import java.util.Scanner;
 
 public class Monitor {
 
-	public static void escolherMetodoPagamento(double totalValue) {
-		List<Product> purchasedProducts = new ArrayList<>();
+	public static void escolherMetodoPagamento(double totalValue, List<Product> purchasedProducts) {
+
 		System.out.println("SELECT PAYMENT METHOD : \n  1 - IN CASH \n  2 - DEBIT CARD \n 3 - CREDIT CARD \n");
 		Scanner sc = new Scanner(System.in);
 		double cashValue = 0.0;
 		double changeMoney = 0.0;
 		int numberInstallments = 0;
+		int count = 0;
+		int amountPurchased = 0;
 		int chosenPaymentMethod = sc.nextInt();
 		do {
 			if (chosenPaymentMethod == 1) {

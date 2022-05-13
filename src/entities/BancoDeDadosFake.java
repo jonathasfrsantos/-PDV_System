@@ -15,6 +15,7 @@ public class BancoDeDadosFake {
 
 		List<Product> listProductsStock = new ArrayList<>();
 
+		
 		listProductsStock.add(p1);
 		listProductsStock.add(p2);
 		listProductsStock.add(p3);
