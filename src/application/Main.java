@@ -20,14 +20,9 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		List<Product> listProductStock = BancoDeDadosFake.buscarProdutos();
-		List<Product> purchasedProducts = new ArrayList<>();
-	
-
 		double totalValue = 0.0;
 		int count = 0;
 		int enteredCode = 0;
-		
-
 		Sale s1 = new Sale();
 		
 		do {
