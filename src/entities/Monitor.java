@@ -25,8 +25,6 @@ public class Monitor {
 		
 
 		System.out.println("SELECT PAYMENT METHOD : \n  1 - IN CASH \n  2 - DEBIT CARD \n 3 - CREDIT CARD \n");
-	
-
 		int chosenPaymentMethod = sc.nextInt();
 		do {
 			if (chosenPaymentMethod == 1) {
