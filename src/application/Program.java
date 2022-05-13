@@ -19,6 +19,7 @@ public class Program {
 		Product p4 = new Product(4, "Dorflex 10 cp", 4.99);
 		Product p5 = new Product(5, "Neosoro", 3.49);
 		Product p6 = new Product(6, "Torsilax 4 cp", 2.87);
+		
 
 		List<Product> listProducts = new ArrayList<>();
 		List<Product> purchasedProducts = new ArrayList<>();
